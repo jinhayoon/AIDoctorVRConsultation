@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 481d8a1df673a9d41b7a05d1a2b92e2c
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 148442
+  packageName: SALSA LipSync Suite
+  packageVersion: 2.5.6
+  assetPath: Assets/Plugins/Crazy Minnow Studio/SALSA LipSync/Plugins/OneClickRuntimes/OneClickConfiguration.cs
+  uploadId: 727448

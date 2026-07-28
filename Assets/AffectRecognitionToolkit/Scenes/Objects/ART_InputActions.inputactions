@@ -1,0 +1,54 @@
+{
+    "name": "ART_InputActions",
+    "maps": [
+        {
+            "name": "ART_Default",
+            "id": "1d1fbd61-0a6a-4232-9e4b-e3c11bf00374",
+            "actions": [
+                {
+                    "name": "Start",
+                    "type": "Button",
+                    "id": "b4ca6682-8baa-49f5-a734-f5df1f516c83",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Calibrate",
+                    "type": "Button",
+                    "id": "a2812c5b-bd91-4eb2-a24e-dc9e9fd4cf12",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "faaaf817-90f5-4920-a363-2bb834fa619f",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Start",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1783c6bd-65ea-42b8-a728-2f0a292ef42a",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Calibrate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
