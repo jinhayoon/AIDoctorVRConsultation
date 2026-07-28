@@ -1,0 +1,15 @@
+# Secret files - NEVER commit these
+.env
+.env.local
+.env.production
+
+# Python
+__pycache__/
+*.pyc
+
+# Conversation data (optional - depends on your IRB requirements)
+conversation_history/
+
+# OS files
+.DS_Store
+Thumbs.db
