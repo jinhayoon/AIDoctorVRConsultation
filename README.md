@@ -8,22 +8,24 @@ This repository accompanies my PhD project titled "Effects of Artificial Intelli
 The simulation is begun by running the ConditionSelection scene, where the researcher is prompted to put in a Participant Identification Number and the desired Condition Number to be played during the simulation.
 
 # System Architecture
-┌───────────────────────────┐        ┌───────────────────────────────┐
+
+```
+┌──────────────────────────┐        ┌──────────────────────────────┐
 │  Researcher Control Panel │        │        OpenAI Realtime API    │
 │  (browser, Flask :5050)   │        │        gpt-realtime-1.5       │
-│  set PID + condition      │        └───────────────▲───────────────┘
-└─────────────┬─────────────┘                        │ WebRTC (audio + data channel)
-              │ HTTP                                 │ ephemeral token
-              ▼                                      │
-┌───────────────────────────┐   GET /get_token   ┌───┴───────────────────────────┐
+│  set PID + condition      │        └───────────────▲──────────────┘
+└─────────────┬────────────┘                        │ WebRTC (audio + data channel)
+              │ HTTP                                  │ ephemeral token
+              ▼                                       │
+┌──────────────────────────┐   GET /get_token   ┌────┴─────────────────────────┐
 │      Flask backend        │◄───────────────────┤        Unity (VR)             │
 │  server.py                │   returns token    │  FlaskClient                  │
 │  • ephemeral token mint   │   + system prompt  │  RealtimeAPIManager (WebRTC)  │
 │  • per-condition prompt   ├───────────────────►│  WebRTCToSALSA (lip-sync)     │
 │  • transcript persistence │  POST /save_convo  │  ExperimentalSceneManager     │
 │  conversation_history/*.json                   │  SceneFlowManager             │
-└───────────────────────────┘                    └───────────────────────────────┘
-
+└──────────────────────────┘                     └───────────────────────────────┘
+```
 *The OpenAI API key never leaves the server. Unity receives only short-lived ephemeral tokens minted per session via /v1/realtime/client_secrets, then opens a direct WebRTC peer connection to OpenAI.*
 
 ### Unity runtime (C#, namespace `AIDoctor.*`)
